@@ -34,7 +34,8 @@ function onKeyDown(event) {
     f: flip,
     v: vert,
     w: walk,
-    a: toggleImages
+    a: toggleImages,
+    s: square
   };
   const f = keyMap[key];
   if (f) {
@@ -58,6 +59,17 @@ function random() {
 function order() {
   const f = ({ i }) => [(i % width) * 10, Math.floor(i / width) * 10];
   transform(f);
+}
+
+function square() {
+  const f = ({i}) => {
+    sqWidth = Math.ceil(Math.sqrt(rects.length));
+    const offset = Math.floor((width - sqWidth) / 2)
+    const x = (i % sqWidth + offset) * 10
+    const y = Math.floor(i / sqWidth + offset) * 10
+    return [x, y]
+  };
+  transform(f)
 }
 
 function flip() {
