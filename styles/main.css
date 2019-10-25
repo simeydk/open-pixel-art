@@ -154,6 +154,15 @@ p code {
   transition: all 0.4s ease-in-out;
 }
 
-.hidden {
-  display: none;
+.party-buttons {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  max-width: 800px;
+}
+
+.party-button {
+  min-width: 180px;
+  font-size: 90%;
+  margin: 0.5rem;
 }
